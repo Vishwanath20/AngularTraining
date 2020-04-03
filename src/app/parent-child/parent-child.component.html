@@ -1,0 +1,19 @@
+<p>parent-child works!</p>
+
+<p>
+    <a routerLink="child">Go to Child</a> |
+</p>
+
+<app-child [messageForChildren] = "messageFromParent"></app-child>
+
+<app-child (messageForParent) = "receiveMessage($event)"></app-child>
+
+<h4>Message from Child is::{{messageFromChild}}</h4>
+
+<app-child></app-child>
+
+<h3>
+    This user name is coming from child using the @ViewChild ::: {{userName}}
+</h3>
+
+<router-outlet></router-outlet>
