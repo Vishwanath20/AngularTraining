@@ -5,11 +5,15 @@ import { HostListnerBindingComponent } from './host-listner-binding/host-listner
 import { ParentChildComponent } from './parent-child/parent-child.component';
 import { ChildComponent } from './parent-child/child/child.component';
 import { AsyncPromisePipeComponent } from './async-promise-pipe/async-promise-pipe.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { UserAddComponent } from './user/user-add/user-add.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { FileuploaddownloadComponent } from './fileuploaddownload/fileuploaddownload.component';
 
 
 const routes: Routes = [
   {
-    path: "home",
+    path: "",
     component: InterceptorDemoComponent
   },
   {
@@ -31,6 +35,24 @@ const routes: Routes = [
       {path:"child", component:ChildComponent, pathMatch:'full'}
     ]
   },
+  // {
+  //   path:'user',
+  //   component:UserListComponent
+  // },
+  // {
+  //   path:'userAdd',
+  //   component:UserAddComponent
+  // },
+  // {
+  //   path:'userDetails',
+  //   component:UserDetailsComponent
+  // },
+  {path : 'useraction', loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
+  {
+    path: 'fileuploaddownload',
+    component: FileuploaddownloadComponent
+  }
+
 ];
 
 @NgModule({
